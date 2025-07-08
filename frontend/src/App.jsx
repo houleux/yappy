@@ -16,13 +16,15 @@ import {axiosInstance} from "./lib/axios.js";
 import {useAuthStore} from "./store/useAuthStore.js";
 
 const App = () => {
-    const {authUser, checkAuth, isCheckingAuth} = useAuthStore();
+    const {authUser, checkAuth, isCheckingAuth, onlineUsers} = useAuthStore();
+
+    console.log({onlineUsers});
 
     useEffect(() => {
         checkAuth();
     }, [checkAuth]);
 
-    console.log(authUser);
+    console.log({authUser});
 
     if (isCheckingAuth && !checkAuth) {
         return (
