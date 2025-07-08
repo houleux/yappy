@@ -1,5 +1,5 @@
 import express from 'express';
-const app = express();
+import { app, server } from "./lib/socket.js";
 
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -22,7 +22,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/message', messageRoutes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log('Express serdfver listening on port:' + PORT);
     connectDB()
 })
