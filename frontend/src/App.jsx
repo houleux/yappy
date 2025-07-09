@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import Navbar from "daisyui/components/navbar/index.js";
 import {Navigate, Route, Routes} from "react-router-dom";
 
 import {Loader} from 'lucide-react'
